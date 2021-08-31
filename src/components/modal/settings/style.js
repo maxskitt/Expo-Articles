@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-start",
     backgroundColor: "#FBFBFB",
-    padding: 26,
+    padding: 16,
   },
   title: {
     fontSize: 16,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginTop: 10,
     padding: 5,
-    borderRadius: 25
+    borderRadius: 15
   },
   button: {
     backgroundColor: '#FFC803',
@@ -63,7 +63,9 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   location: {
-    backgroundColor: '#636363',
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    padding: 8
   }
 });
 

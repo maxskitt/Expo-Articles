@@ -9,6 +9,13 @@ const initialState = {
     query: null,
     per: 5
   },
+  filter: [
+    false,
+    false,
+    false,
+    false,
+    false,
+  ],
   loading: false,
   error: null,
 };
@@ -38,6 +45,20 @@ const slice = createSlice({
       state.loading = false
       state.param.page--
     },
+    articlesFilter: (state, action) => {
+      state.loading = false
+      state.filter[action.payload.id] = action.payload.filter
+    },
+    articlesFilterClear: (state, action) => {
+      state.loading = false
+      state.filter =  [
+        false,
+        false,
+        false,
+        false,
+        false,
+      ]
+    },
   },
 });
 
@@ -47,7 +68,9 @@ export const {
   articlesSucceeded,
   articlesFailed,
   articlesNext,
-  articlesPrev
+  articlesPrev,
+  articlesFilter,
+  articlesFilterClear
 } = slice.actions;
 
 export default slice.reducer;

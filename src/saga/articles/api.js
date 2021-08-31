@@ -11,7 +11,7 @@ function fetchArticles(action) {
     size = snap.size
   });
 
-  return docRef.limit(50 * action).get().then((documentSnapshots) => {
+  return docRef.get().then((documentSnapshots) => {
     let arr = []
 
     documentSnapshots.forEach((doc) => {

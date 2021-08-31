@@ -4,8 +4,8 @@ import EditScreen from "../../components/articles/edit";
 import ArticlesScreen from "../../components/article";
 import {useLinkTo} from "@react-navigation/native";
 import {Avatar} from "react-native-elements";
-import settingsModal from "../../components/settings";
-import sortModal from "../../components/sort";
+import settingsModal from "../../components/modal/settings";
+
 
 const {createNativeStackNavigator} = require("@react-navigation/native-stack");
 
@@ -75,12 +75,6 @@ function ArticlesStackScreen() {
       <ArticlesStack.Group screenOptions={{presentation: 'modal'}}>
         <ArticlesStack.Screen name="ModalSettings"
                               component={settingsModal}
-                              options={{
-                                headerShown: false,
-                              }}
-        />
-        <ArticlesStack.Screen name="ModalSort"
-                              component={sortModal}
                               options={{
                                 headerShown: false,
                               }}

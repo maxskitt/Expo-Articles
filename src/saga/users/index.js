@@ -5,7 +5,7 @@ import {usersFailed, usersRequested, usersSucceeded} from "../../redux/slices/us
 function* usersRequest(action) {
   try {
     const response = yield call(fetchUser, action.payload);
-    yield put(usersSucceeded({ articles: response }));
+    yield put(usersSucceeded({ users: response }));
   } catch (error) {
     yield put(usersFailed({ error }));
   }

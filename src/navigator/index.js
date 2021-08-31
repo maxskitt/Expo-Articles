@@ -13,7 +13,6 @@ function MyStack() {
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          position: "absolute",
           backgroundColor: '#FFFFFF',
           borderTopRightRadius: '20',
           borderTopLeftRadius: '20',

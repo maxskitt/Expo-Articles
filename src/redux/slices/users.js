@@ -16,7 +16,9 @@ const slice = createSlice({
       state.loading = true
     },
     usersSucceeded: (state, action) => {
-      state.collection = concat(state.collection, action.payload.articles)
+
+      state.collection = action.payload.users
+      //state.collection = concat(state.collection, action.payload.articles)
       state.loading = false
     },
     usersFailed: (state, action) => {
@@ -25,7 +27,7 @@ const slice = createSlice({
     },
     removeGradedCard: (state, action) => {
        const { screenID } = action.payload;
-      // console.log(screenID, 'dsfds')
+
       remove(state.collection, { screenID: screenID });
     },
   },
