@@ -14,7 +14,19 @@ export default function Home({navigation}) {
         <TouchableOpacity onPress={() => navigation.navigate('login')}>
           <Text>Login</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('animation')}>
+          <Text>animation</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('animation1')}>
+          <Text>animation1</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('animation2')}>
+          <Text>animation2</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 }
+
+
+

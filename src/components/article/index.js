@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, View, Text, TouchableOpacity, Pressable, Modal, ScrollView} from "react-native";
+import {FlatList, View, Text, TouchableOpacity, Animated, ScrollView} from "react-native";
 import {useDispatch, useSelector} from "react-redux";
 import {articlesRequested} from "../../redux/slices/articles";
 import globalStyles from "../../../styles/global";
@@ -25,7 +25,7 @@ function ArticlesScreen({navigation}) {
 
   return (
     <View style={globalStyles.container}>
-      <ScrollView>
+      {/*<ScrollView>*/}
         <View style={styles.container}>
           <Text style={styles.jobSearch}>Job Search</Text>
           <View style={styles.containerSearch}>
@@ -56,45 +56,72 @@ function ArticlesScreen({navigation}) {
             <View>
               <TouchableOpacity
                 style={styles.sortPosted}
-                onPress={() => setModalVisible(true)}
+                onPress={() => setModalVisible(!modalVisible)}
               >
                 <Text style={styles.sortPostedText}>Date posted: </Text>
                 <Icon name="angle-down" size={16}/>
               </TouchableOpacity>
-
-              <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                  setModalVisible(!modalVisible);
-                }}
-              >
-                <View style={styles.centeredView}>
-                  <View style={styles.modalView}>
-                    <Text style={styles.modalText}>Hello World!</Text>
-                    <Pressable
-                      style={[styles.button, styles.buttonClose]}
-                      onPress={() => setModalVisible(!modalVisible)}
-                    >
-                      <Text style={styles.textStyle}>Hide Modal</Text>
-                    </Pressable>
-                  </View>
+              <Animated.View style={{opacity: modalVisible}}>
+                <View style={{position: "absolute", backgroundColor: "yellow", top: 6, width: 80}}>
+                  <TouchableOpacity
+                    onPress={() => {
+                    }}
+                  >
+                    <Text style={styles.modalText}>Sort 1</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {
+                    }}
+                  >
+                    <Text style={styles.modalText}>Sort 1</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {
+                    }}
+                  >
+                    <Text style={styles.modalText}>Sort 1</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {
+                    }}
+                  >
+                    <Text style={styles.modalText}>Sort 1</Text>
+                  </TouchableOpacity>
                 </View>
-              </Modal>
-
+              </Animated.View>
             </View>
           </View>
         </View>
-
-        <FlatList
-          data={articles}
-          renderItem={renderItemArticles}
-          keyExtractor={item => item.id}
-        />
-      </ScrollView>
+          <FlatList
+            data={articles}
+            renderItem={renderItemArticles}
+            keyExtractor={item => item.id}
+          />
+      {/*</ScrollView>*/}
     </View>
   );
 }
 
 export default ArticlesScreen;
+
+
+// <Modal
+//   animationType="slide"
+//   transparent={true}
+//   visible={modalVisible}
+//   onRequestClose={() => {
+//     setModalVisible(!modalVisible);
+//   }}
+// >
+//   <View style={styles.centeredView}>
+//     <View style={styles.modalView}>
+//       <Text style={styles.modalText}>Hello World!</Text>
+//       <Pressable
+//         style={[styles.button, styles.buttonClose]}
+//         onPress={() => setModalVisible(!modalVisible)}
+//       >
+//         <Text style={styles.textStyle}>Hide Modal</Text>
+//       </Pressable>
+//     </View>
+//   </View>
+// </Modal>

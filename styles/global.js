@@ -5,6 +5,8 @@ const globalStyles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-start",
     backgroundColor: "#FBFBFB",
+    zIndex: 10,
+
   },
   containerGrabber: {
     justifyContent:'center',

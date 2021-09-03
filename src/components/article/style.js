@@ -3,6 +3,7 @@ import {StyleSheet} from "react-native";
 const styles = StyleSheet.create({
   container: {
     margin: 16,
+    zIndex: 1,
   },
   containerButton: {
     flex: 1,
@@ -61,9 +62,6 @@ const styles = StyleSheet.create({
     color: '#636363',
     fontSize: 14,
   },
-
-
-
   centeredView: {
     flex: 1,
     justifyContent: "center",
